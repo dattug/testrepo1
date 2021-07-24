@@ -17,4 +17,3 @@ _build/
 _checkouts/
 
 /node_modules
-/package-lock.json
