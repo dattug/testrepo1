@@ -27,7 +27,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        
+
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
@@ -44,7 +44,9 @@ jobs:
     #     # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - run: echo "test"
+    - uses: actions/checkout@v2
+      name: Check out code
+
     - name: Build and push docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
